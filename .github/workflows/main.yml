@@ -29,11 +29,11 @@ jobs:
         cache-name: cache-nuget-packages
       with:
         path: .\packages
-      key: ${{ runner.os }}-build-${{ env.cache-packages }}-${{ hashFiles('**/packages.config') }}
-      restore-keys: |
-        ${{ runner.os }}-build-${{ env.cache-packages }}-
-        ${{ runner.os }}-build-
-        ${{ runner.os }}-
+        key: ${{ runner.os }}-build-${{ env.cache-packages }}-${{ hashFiles('**/packages.config') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-packages }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
 
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
