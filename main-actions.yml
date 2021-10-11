@@ -23,8 +23,21 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
 
+    - name: Cache nuget packages
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-nuget-packages
+      with:
+        path: .\packages
+      key: ${{ runner.os }}-build-${{ env.cache-packages }}-${{ hashFiles('**/packages.config') }}
+      restore-keys: |
+        ${{ runner.os }}-build-${{ env.cache-packages }}-
+        ${{ runner.os }}-build-
+        ${{ runner.os }}-
+
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
+      if: steps.cache.outputs.cache-hit != 'true'
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
 
     - name: Setup VSTest
@@ -36,7 +49,7 @@ jobs:
 
     #- name: Validate Automapper Configs
     #  run: .\PLC.AutoMapperConfigTest\bin\Debug\PLC.AutoMapperConfigTest.exe test
-
+dang so re
     #- name: Run Tests
     #  run: vstest.console.exe ${{env.TEST_FILE_PATH}} /logger:trx
      
