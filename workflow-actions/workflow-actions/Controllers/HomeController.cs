@@ -12,6 +12,8 @@ namespace workflow_actions.Controllers
         {
             ViewBag.Title = "Home Page";
 
+            var check = "making some change but not a change to packages.config";
+
             return View();
         }
     }
