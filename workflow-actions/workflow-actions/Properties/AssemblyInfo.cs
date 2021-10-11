@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("workflow_actions.Tests")]
+[assembly: AssemblyTitle("workflow_actions")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("workflow_actions.Tests")]
+[assembly: AssemblyProduct("workflow_actions")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9aa79ed8-f24e-4114-93c8-276b7f8c121c")]
+[assembly: Guid("ea29ddec-044e-462e-8a4f-aff4ab51a428")]
 
 // Version information for an assembly consists of the following four values:
 //
