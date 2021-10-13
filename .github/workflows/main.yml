@@ -28,7 +28,7 @@ jobs:
       env:
         cache-name: cache-nuget-packages
       with:
-        path: .\packages
+        path: ${{env.GITHUB_WORKSPACE}}
         key: ${{ runner.os }}-build-${{ env.cache-packages }}-${{ hashFiles('**/packages.config') }}
         restore-keys: |
           ${{ runner.os }}-build-${{ env.cache-packages }}-
